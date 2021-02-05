@@ -62,11 +62,10 @@
 
 /* --- media query --- */
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 320px) {
   .title {
     border: 3px solid gray;
     font-size: 0.7rem;
-    width: 60%;
     position: absolute;
     top: 2rem;
     left: 5%;
@@ -95,9 +94,47 @@
     border: 3px solid gray;
     position: absolute;
     top: 0;
-    left: -10.5%;
+    left: -10%;
     transform: translate(-50%, -50%);
+  }
+
+  .cards-container li:nth-child(2n) .card::before {
+    background-color: orange;
   }
 }
 
-/* to do center circle and media query for min 800px */
+@media screen and (min-width: 600px) {
+  .card::before {
+    transform: translateX(-65%);
+  }
+  .card {
+    border: none;
+    box-shadow: none;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .timeline::before {
+    left: calc(50% - 2.5px);
+  }
+  .title {
+    left: 45%;
+  }
+  .cards-container {
+    margin: 6rem auto 0;
+  }
+  .cards-container li:nth-child(odd) {
+    float: right;
+    width: 45%;
+    clear: left;
+  }
+  .cards-container li:nth-child(even) {
+    float: left;
+    width: 45%;
+    text-align: right;
+    clear: right;
+  }
+  .cards-container li:nth-child(even) .card::before {
+    left: 112.5%;
+  }
+}
