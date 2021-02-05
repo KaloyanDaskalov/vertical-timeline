@@ -1,0 +1,103 @@
+:root {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline {
+  width: 80%;
+  max-width: 1200px;
+  border: 3px solid gray;
+  position: relative;
+}
+
+.title {
+  border-bottom: 3px solid gray;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.cards-container {
+  list-style-type: none;
+  width: 80%;
+  margin: 2rem auto 1rem;
+}
+
+.cards-container li {
+  margin-bottom: 2rem;
+}
+
+.card {
+  padding: 0.5rem;
+  border: 3px solid gray;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.card-info {
+  letter-spacing: 0.05rem;
+  font-style: italic;
+}
+
+/* --- media query --- */
+
+@media screen and (min-width: 500px) {
+  .title {
+    border: 3px solid gray;
+    font-size: 0.7rem;
+    width: 60%;
+    position: absolute;
+    top: 2rem;
+    left: 5%;
+  }
+
+  .timeline::before {
+    content: "";
+    width: 5px;
+    background-color: gray;
+    position: absolute;
+    top: 4rem;
+    left: 10%;
+    bottom: 0;
+  }
+
+  .cards-container {
+    margin: 6rem 0.5rem 0 auto;
+  }
+
+  .card::before {
+    content: "";
+    background-color: green;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 3px solid gray;
+    position: absolute;
+    top: 0;
+    left: -10.5%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* to do center circle and media query for min 800px */
